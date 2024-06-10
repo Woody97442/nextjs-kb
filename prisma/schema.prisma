@@ -17,7 +17,7 @@ model Task {
   id      String   @id @default(auto()) @map("_id") @db.ObjectId
   name    String
   validate Boolean @default(false)
-  todoList TodoList @relation(name: "tasks", fields: [ todoListId ], references: [id])
+  todoList TodoList @relation(name: "tasks", fields: [ todoListId ], references: [id], onDelete: Cascade)
   todoListId String @db.ObjectId
 }
 
