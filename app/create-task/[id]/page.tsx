@@ -14,7 +14,7 @@ const Task = ({ params }: { params: { id: string } }) => {
     fetch("/api/todolist?id=" + id)
       .then((res) => res.json())
       .then((data) => setTodolist(data));
-  }, []);
+  });
 
   const createTask = async (event: { preventDefault: () => void }) => {
     event.preventDefault();
